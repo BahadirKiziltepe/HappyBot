@@ -13,4 +13,4 @@ class Responding:
                 return
         
             if message.content == "$Hello":
-                #
+                await channel.send('World!')
