@@ -12,5 +12,4 @@ class Responding:
             if message.author == self.client.user:
                 return
         
-            if message.content == "$Hello":
-                await self.channel.
+           # if message.content == "$Hello":
