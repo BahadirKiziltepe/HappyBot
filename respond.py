@@ -2,14 +2,15 @@ import os
 import discord
 
 class Responding:
-    def __init__(self, client, channel):
+    def __init__(self, client):
         self.client = client
-        self.channel = channel
         
     def Setup(self):
         @self.client.event
         async def on_message(message):
+            channel = message.channel
             if message.author == self.client.user:
                 return
         
-           # if message.content == "$Hello":
+            if message.content == "$Hello":
+                #
