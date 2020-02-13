@@ -7,3 +7,6 @@ I|did it!
 or|did I?
 Yep|You did it!
 Why|not?
+Wecan|doit
+Who are you?|An undefined lifeform
+Who is Yunus?|You mean the smartest man alive?

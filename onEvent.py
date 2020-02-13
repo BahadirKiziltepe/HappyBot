@@ -22,6 +22,7 @@ class EventProperties:
         async def on_message(message):
             channel = message.channel
             global reload
+            global dictionary
             
             if message.author == self.client.user:
                 return
@@ -36,8 +37,17 @@ class EventProperties:
                 for lines in dictionary:
                     words = lines.split('|')
                     wordMap["$" + words[0]] = words[1]
-                        
-            if message.content.startswith("$ExtendDictionary|"):
+              
+            if message.content == "$Help":
+                word = "Commands to respond: "
+                for lines in dictionary:
+                    words = lines.split('|')
+                    word += "`" + words[0] + "` "
+                    
+                word += "\nCommands: `$Help`, `$ExtendDictionary|<insert word>|<insert word>`"
+                await channel.send(word)
+              
+            elif message.content.startswith("$ExtendDictionary|"):
                 reload = True
                 
                 words = message.content.split('|')
