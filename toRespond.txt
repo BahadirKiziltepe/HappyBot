@@ -1,2 +1,9 @@
-Hello||World!
-Ping!||Pong!
+Hello|World!
+Ping!|Pong!
+You|Me
+Yours|isMine
+Bla|Bla
+I|did it!
+or|did I?
+Yep|You did it!
+Why|not?
