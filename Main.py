@@ -10,6 +10,7 @@ guild = os.getenv('DISCORD_GUILD')
 client = discord.Client()
 
 event = EventProperties(client)
+event.setDictionary()
 event.Setup()
     
 client.run(token)
