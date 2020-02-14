@@ -5,6 +5,7 @@ reload = False
 reWrite = False
 checkLines = []
 words = []
+dictionary = []
 wordMap = {}
         
 class EventProperties:
@@ -70,7 +71,7 @@ class EventProperties:
                     words = lines.split('|')
                     word += "`" + words[0] + "` "
                     
-                word += "\nCommands: `$Help`, `$ExtendDictionary|<insert word>|<insert word>`"
+                word += "\nCommands: `$Help`, `$ExtendDictionary|<i>|<i>`, `$DeleteWord|<i>|<i>`"
                 await channel.send(word)
               
             elif message.content.startswith("$ExtendDictionary|"):
@@ -90,11 +91,15 @@ class EventProperties:
                 lines = file.readlines()
                 file.close()
                 
-                file = open('toRespond.txt', 'w')
+                addLine = []
                 for line in lines:
                     if line.strip('\n') != words[1] + "|" + words[2]:
-                        file.write(line)
+                        addLine.append(line)
                         
+                file = open('toRespond.txt', 'w')
+                for line in addLine:
+                    file.write(line)
+                    
                 file.close()
                     
             elif message.content in wordMap:
